@@ -15,7 +15,7 @@ void selection_sort(int *array, size_t size)
         return;
 
     /* Pre sorted array */
-    if (size < 2)
+    if (size == 0)
         return;
 
     for (a = 0; a < (size - 1); a++)
@@ -36,7 +36,7 @@ void selection_sort(int *array, size_t size)
             temp = array[a];
             array[a] = array[min];
             array[min] = temp;
+            print_array(array, size);
         }
-        print_array(array, size);
     }
 }
