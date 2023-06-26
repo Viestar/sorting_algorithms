@@ -62,9 +62,14 @@ ssize_t partitioner(int *array, ssize_t lower, ssize_t upper)
  */
 void quick_sorter(int *array, ssize_t lower_bound, ssize_t upper_bound)
 {
+	/* The Lomuto way */
+	ssize_t mid_bound;
+	if (lower_bound >= upper_bound || lower_bound < 0)
+		return;
+
 	if (lower_bound < upper_bound)
 	{
-		ssize_t mid_bound = partitioner(array, lower_bound, upper_bound);
+		mid_bound = partitioner(array, lower_bound, upper_bound);
 		quick_sorter(array, lower_bound, mid_bound - 1);
 		quick_sorter(array, mid_bound + 1, upper_bound);
 	}
