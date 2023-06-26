@@ -2,6 +2,7 @@
 #define SORT_H
 #include <stdio.h>
 #include <stdbool.h>
+#include "sys/types.h"
 
 /* Data Structures */
 
@@ -14,9 +15,9 @@
  */
 typedef struct listint_s
 {
-	const int n;
-	struct listint_s *prev;
-	struct listint_s *next;
+    const int n;
+    struct listint_s *prev;
+    struct listint_s *next;
 } listint_t;
 
 /* Prototypes */
