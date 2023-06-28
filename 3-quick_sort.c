@@ -35,9 +35,15 @@ ssize_t partitioner(int *array, ssize_t lower, ssize_t upper)
 	while (start < end)
 	{
 		while (array[start] <= pivot && start <= upper)
+		{
+			print_array(array, (upper) + 1);
 			start++;
+		}
 		while (array[end] > pivot && end >= lower)
+		{
+			print_array(array, (upper) + 1);
 			end--;
+		}
 		if (start < end)
 		{
 			swap_cont = array[start];
@@ -50,7 +56,7 @@ ssize_t partitioner(int *array, ssize_t lower, ssize_t upper)
 	swap_cont = array[lower];
 	array[lower] = array[end];
 	array[end] = swap_cont;
-	return end;
+	return (end);
 	print_array(array, (upper) + 1);
 }
 
@@ -64,6 +70,7 @@ void quick_sorter(int *array, ssize_t lower_bound, ssize_t upper_bound)
 {
 	/* The Lomuto way */
 	ssize_t mid_bound;
+
 	if (lower_bound >= upper_bound || lower_bound < 0)
 		return;
 
