@@ -8,11 +8,13 @@
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *temp_node = NULL;
-	listint_t *local = *list;
+	listint_t *local;
 
 	/* Checking if array is empty */
-	if (local == NULL || local->next == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
+
+	local = *list;
 
 	local = local->next;
 
